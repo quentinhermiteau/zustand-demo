@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Button } from 'react-bootstrap';
+import useLoginStore from '../store/Login';
 
 const Login = () => {
-    const [ username, setUsername ] = useState('');
-    const [ password, setPassword ] = useState('');
+    const { username, password, setUsername, setPassword, login } = useLoginStore(state => state);
     
     const handleSubmit = event => {
         event.preventDefault();
-        // some code here...
+        login();
     }
     
     return (
